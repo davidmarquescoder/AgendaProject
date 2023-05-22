@@ -12,3 +12,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_max_show_all = 200 # Se clicar em 'mostrar tudo' ele exibirá no máximo 200 contatos
     list_editable = ('first_name',)
     list_display_links = ('phone', 'id',)
+
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    ordering = ('-id',) # Estou ordenando pelo id de forma decrescente
